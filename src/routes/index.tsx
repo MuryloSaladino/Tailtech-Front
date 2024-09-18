@@ -4,11 +4,14 @@ import Login from "../pages/public/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Home from "../pages/protected/Home";
 import { UserProvider } from "../providers/UserProvider";
+import PassControl from "../pages/protected/PassControl";
+import PetsList from "../pages/protected/PetsList";
+import NotFound from "../pages/public/NotFound";
 
 const mainRouter = createBrowserRouter([
     {
         path: "*",
-        element: <Box>Not found</Box>
+        element: <NotFound/>
     },
     {
         path: "/login",
@@ -21,6 +24,14 @@ const mainRouter = createBrowserRouter([
             {
                 path: "home",
                 element: <Home/>
+            },
+            {
+                path: "pass-control",
+                element: <PassControl/>
+            },
+            {
+                path: "my-pets",
+                element: <PetsList/>
             }
         ]
     }
