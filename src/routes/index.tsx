@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../pages/Login";
+import Login from "../pages/public/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
-import Home from "../pages/Home";
+import Home from "../pages/protected/Home";
 import { UserProvider } from "../providers/UserProvider";
 
 const mainRouter = createBrowserRouter([

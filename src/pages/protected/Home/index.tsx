@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import PageEnveloper from "../../components/PageEnveloper";
+import PageEnveloper from "../../../components/PageEnveloper";
 
 export default function Home() {
 
