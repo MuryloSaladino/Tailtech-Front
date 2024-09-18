@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IUserProvider {
     user: TUser | null;
+    login: (email:string, password: string) => Promise<void>;
     logout: () => void;
     loadingUser: boolean;
 }
@@ -22,9 +23,14 @@ export function UserProvider({ children }: { children?: ReactNode }) {
         navigate("/login")
     }
 
-    // teste
+    const login = async (email:string, password: string) => {
+        setUser({ email, fullname: "Nome Completo", id: "UserID" })
+    }
+
+    // teste de auto login
     useEffect(() => {
         setLoadingUser(true)
+
         const id = setTimeout(() => {
             setUser({ email: "user@mail.com", fullname: "Nome Completo", id: "UserID" })
             setLoadingUser(false)
@@ -36,7 +42,7 @@ export function UserProvider({ children }: { children?: ReactNode }) {
     return(
         <UserContext.Provider
             children={children}
-            value={{ user, logout, loadingUser }}
+            value={{ user, login, logout, loadingUser }}
         />
     )
 }
