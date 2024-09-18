@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/public/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
@@ -7,6 +6,8 @@ import { UserProvider } from "../providers/UserProvider";
 import PassControl from "../pages/protected/PassControl";
 import PetsList from "../pages/protected/PetsList";
 import NotFound from "../pages/public/NotFound";
+import RegisterPet from "../pages/protected/RegisterPet";
+import Register from "../pages/public/Register";
 
 const mainRouter = createBrowserRouter([
     {
@@ -15,11 +16,23 @@ const mainRouter = createBrowserRouter([
     },
     {
         path: "/login",
-        element: <UserProvider><Login/></UserProvider>
+        element: (
+            <UserProvider> 
+                <Login/> 
+            </UserProvider>
+        )
+    },
+    {
+        path: "/register",
+        element: <Register/>
     },
     {
         path: "/",
-        element: <UserProvider><ProtectedRoute/></UserProvider>,
+        element: (
+            <UserProvider> 
+                <ProtectedRoute/> 
+            </UserProvider>
+        ),
         children: [
             {
                 path: "home",
@@ -32,6 +45,10 @@ const mainRouter = createBrowserRouter([
             {
                 path: "my-pets",
                 element: <PetsList/>
+            },
+            {
+                path: "register-pet",
+                element: <RegisterPet/>
             }
         ]
     }
