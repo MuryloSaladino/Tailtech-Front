@@ -8,7 +8,7 @@ export default function PassControl() {
         <PageEnveloper>
             <Stack spacing={3}>
                 <PageTitle iconPath="/paw_prints.svg">PassControl</PageTitle>
-
+                
             </Stack>
         </PageEnveloper>
     )
