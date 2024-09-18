@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IUserProvider {
     user: TUser | null;
-    login: (email:string, password: string) => Promise<void>;
+    login: (email:string, password:string) => Promise<void>;
     logout: () => void;
     loadingUser: boolean;
 }
