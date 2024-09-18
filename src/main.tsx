@@ -6,7 +6,7 @@ import mainRouter from './routes'
 
 import "./styles/reset.css"
 import "./styles/global.css"
-
+import "./styles/animations.css"
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
