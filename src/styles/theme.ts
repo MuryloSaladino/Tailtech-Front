@@ -13,6 +13,9 @@ const appTheme = createTheme({
             dark: "#5F5B5B",
         },
     },
+    typography: {
+        fontFamily: '"Poppins", sans-serif'
+    }
 })
 
 export default appTheme
