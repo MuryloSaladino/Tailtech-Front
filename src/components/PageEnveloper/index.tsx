@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import Header from "../Header";
 import { StyledMain } from "./styles";
-import { Container, ThemeProvider } from "@mui/material";
-import appTheme from "../../styles/theme";
+import { Container } from "@mui/material";
 
 interface IPageEnveloperProps {
     children?: ReactNode;
@@ -11,7 +10,7 @@ interface IPageEnveloperProps {
 
 export default function PageEnveloper({ children, noHeader }: IPageEnveloperProps) {
     return(
-        <ThemeProvider theme={appTheme}>
+        <>
             { !noHeader && <Header/> }
 
             <StyledMain>
@@ -19,6 +18,6 @@ export default function PageEnveloper({ children, noHeader }: IPageEnveloperProp
                     { children }
                 </Container>
             </StyledMain>
-        </ThemeProvider>
+        </>
     )
 }

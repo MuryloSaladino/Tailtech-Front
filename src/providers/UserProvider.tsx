@@ -23,7 +23,7 @@ export function UserProvider({ children }: { children?: ReactNode }) {
         navigate("/login")
     }
 
-    const login = async (email:string, password: string) => {
+    const login = async (email:string, password:string) => {
         setUser({ email, fullname: "Nome Completo", id: "UserID" })
     }
 
@@ -33,7 +33,7 @@ export function UserProvider({ children }: { children?: ReactNode }) {
 
         const id = setTimeout(() => {
             setUser({ email: "user@mail.com", fullname: "Nome Completo", id: "UserID" })
-            setLoadingUser(false)
+            setLoadingUser(true)
         }, 1000)
 
         return () => clearTimeout(id)

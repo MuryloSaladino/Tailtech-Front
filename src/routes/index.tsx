@@ -8,6 +8,8 @@ import PetsList from "../pages/protected/PetsList";
 import NotFound from "../pages/public/NotFound";
 import RegisterPet from "../pages/protected/RegisterPet";
 import Register from "../pages/public/Register";
+import { ThemeProvider } from "@emotion/react";
+import appTheme from "../styles/theme";
 
 const mainRouter = createBrowserRouter([
     {
@@ -30,7 +32,9 @@ const mainRouter = createBrowserRouter([
         path: "/",
         element: (
             <UserProvider> 
-                <ProtectedRoute/> 
+                <ThemeProvider theme={appTheme}>
+                    <ProtectedRoute/> 
+                </ThemeProvider>
             </UserProvider>
         ),
         children: [
